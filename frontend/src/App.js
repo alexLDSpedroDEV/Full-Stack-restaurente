@@ -5,6 +5,7 @@ import { Navbar } from "./components/navbar/navbar"
 import React, { useEffect, useState } from 'react'
 import { Folder } from './components/folder/folder'
 import { Main } from './page/main/main'
+import Login from './page/login/login'
 
 
 
@@ -38,10 +39,11 @@ function App() {
           <Router>
             <Navbar acao={ativaCor}/>
             <Routes>
-              <Route path="/" element={<Main />} />
+              <Route path="/index" element={<Main />} />
               <Route path="/shop" element={<Main/>} />
               <Route path="/card" element={<Main/>} />
               <Route path="/logar" element={<Main/>} />
+              <Route path="/login" element={<Login/>} />
             </Routes>
             <Folder />
           </Router>

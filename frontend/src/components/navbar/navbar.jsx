@@ -20,11 +20,12 @@ export const Navbar = ({acao}) => {
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
                     
 
-                    <a className="link" href="#Home"> Home </a>
-                    <a className="link" href="#About"> About</a>
-                    <a className="link" href="#Menu"> Menu </a>
-                    <a className="link" href="#Awards">Awards</a>
-                    <a className="link" href="#contact">Contact</a>
+                    <a className="link" href="/index/#Home"> Home </a>
+                    <a className="link" href="/index/#About"> About</a>
+                    <a className="link" href="/index/#Menu"> Menu </a>
+                    <a className="link" href="/index/#Awards">Awards</a>
+                    <a className="link" href="/index/#contact">Contact</a>
+                    <a className="link" href="/login">Login</a>
                     
                 </div>
                 <span className="links" onClick={() => setSignUp(true)}>
