@@ -1,9 +1,9 @@
 /* import TelaDeLogin from './componentes/TelaDeLogin' */
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import { Navbar } from "./components/navbar"
+import { Navbar } from "./components/navbar/navbar"
 
 import React, { useEffect, useState } from 'react'
-import { Folder } from './components/folder'
+import { Folder } from './components/folder/folder'
 import { Main } from './page/main/main'
 
 

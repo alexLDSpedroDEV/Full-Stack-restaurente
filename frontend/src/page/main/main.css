@@ -1,0 +1,178 @@
+.ConatMenu{
+    width: 100vw;
+    height: auto;
+    padding-top: 4vh;
+    background-color: rgb(15, 13, 13);
+   
+}
+.Conatiner{
+    width: 95vw;
+    margin: auto;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5vh;
+}
+.Conatinerh2{
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    font-size: 1.2em;
+}
+.Conatinerimg{
+    margin-left: 48%;
+    width: 50px;
+}
+.Conatinerh1{
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+    color: rgb(196, 172, 131);
+}
+.content{
+    display: grid;
+    grid-template-columns: auto 40% auto;
+    justify-content: space-around;
+    align-items: start;
+}
+.content img{
+    margin: auto;
+    height: 80vh;
+    max-height: 650px;
+}
+.boxsimg{
+    display: grid;
+    justify-content: center;
+}
+.boxs{
+    width: 28vw;
+}
+.boxs h2{
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 3em;
+    margin-bottom: 3vh;
+}
+.itensMenu{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+.itensMenu h4{
+    color: rgb(196, 172, 131);
+    font-family: 'Cinzel', serif;
+    font-size: 1.2em;
+}
+.itensMenu p{
+    color: rgb(109, 108, 108);
+    font-size: 0.8em;
+}
+.itensTextMenu {
+    display: flex;
+    justify-content: space-between;
+}
+.itensTextMe h4{
+    color: rgb(196, 172, 131);
+    font-family: 'Cinzel', serif;
+    font-size: 1.4em;
+}
+@media (max-width: 1300px) and (max-height: 1000px) {
+    
+    .content{
+        grid-template-columns: auto 30% auto;
+    }
+    .content img{
+        height: 60vh;
+    }
+}
+@media (max-width: 970px){
+
+    .content{
+        grid-template-columns: auto 40% auto;
+    }
+    .content img{
+        height: 50vh;
+    }
+}
+@media (max-width: 920px){
+
+    .content{
+        grid-template-columns: auto;
+    }
+    .boxs {
+        width: 80vw;
+    }
+    .content img{
+        height: 500px;
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+    }
+}
+@media (max-width: 550px){
+
+    
+    
+    .content img{
+        height: 450px;
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+    }
+    .Conatinerh1 {
+        text-align: center;
+        font-size: 3em;
+        
+    }
+    .boxs h2 {
+        
+        font-size: 2.3em;
+
+    }
+    
+    .itensTextMenu {
+        margin-top: 40px;
+    }
+    .itensTextMe h4 {
+        font-size: 1.2em;
+    }
+    p {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 390px){
+
+    .Conatinerh1 {
+        font-size: 2.5em;
+        
+    }
+    .Conatinerh2 {
+
+        font-size: 1.0em;
+    }
+    .itensTextMe h4 {
+        font-size: 1.1em;
+    }
+    p {
+        font-size: 0.6em;
+    
+    }
+    .itemValue{
+        font-size: 0.8em;
+    }
+    
+}
+@media (max-width: 320px){
+
+    .Conatinerh1 {
+        font-size: 2.3em;
+        
+    }
+    .boxs {
+        margin: auto;
+        width: 85vw;
+    }
+    .boxs h2 {
+        font-size: 2.1em;
+    }
+}

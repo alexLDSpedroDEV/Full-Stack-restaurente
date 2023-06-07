@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=League+Spartan:wght@100&family=Open+Sans:wght@300&display=swap');
+
+
+.folder{
+    height: auto;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    justify-content: space-around;
+    
+    padding-top: 5vh;
+    margin-top: 0vh;
+    background-color: black;
+    color: rgb(139, 134, 134);
+}
+.folderColunaCoffee{
+    
+    padding: 10px;
+    max-width: 250px;
+}
+
+.folderColunaBtn button{
+    padding: 10px;
+}
+.folderColunaCoffee h4{
+    margin-bottom: 4vh;
+    font-weight: 800;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    color: rgb(196, 172, 131);
+}
+.folderColunaBtn button:hover{
+    color: rgb(196, 172, 131);
+}
+.folderColunaSuport p{
+    cursor: pointer;
+}
+.folderColunaSuport p:hover{
+    color: rgb(196, 172, 131);
+}
+.folderColunaSuport h4{
+    
+    font-weight: 800;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    color: rgb(196, 172, 131);
+}
+.folderColunaView p{
+    cursor: pointer;
+}
+.folderColunaView p:hover{
+    color: rgb(196, 172, 131);
+}
+.folderColunaView h4{
+    
+    font-weight: 800;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    color: rgb(196, 172, 131);
+}
+.FolderDireito{
+    min-height: 50px;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    color: rgb(196, 172, 131);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+@media (max-width: 660px) {
+    .folder{
+        height: auto;
+        width: 100vw;
+        
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+       
+        padding-top: 5vh;
+        margin-top: 0vh;
+    }
+    .FolderDireito p{
+        font-size: 0.8em;
+    }
+    .folderColunaView{
+        margin-top: 8vh;
+    }
+}
+@media (max-width: 454px) {
+    .folder{
+        height: auto;
+        width: 100vw;
+        
+        grid-template-columns: auto;
+        justify-content: center;
+        padding-top: 5vh;
+        margin-top: 0vh;
+    }
+    .folderColunaSuport{
+        margin-top: 8vh;
+    }
+
+}

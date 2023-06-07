@@ -1,0 +1,247 @@
+.ConatAwards{
+    width: 100vw;
+    height: auto;
+    
+}
+.ContainerAwards{
+    width: 90vw;
+    margin: auto;
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 50% auto;
+    justify-content: space-around;
+    align-items: center;
+}
+.boxImgAwards{
+    margin: auto;
+}
+.boxImgAwards img{
+    width: 600px;
+}
+.boxTextaWard{
+    width: 50vw;
+    
+}
+.boxTextaWard h1{
+    font-weight: 500;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    font-size: 5em;
+    color: rgb(196, 172, 131);
+    font-family: 'Cinzel', serif;
+
+}
+.boxTextaWard img{
+    width: 40px;
+}
+.boxTextaWard h4{
+    font-size: 0.8em;
+    color: rgb(196, 172, 131);
+    margin-bottom: 10px;
+}
+.boxTextaWard .imgName{
+    margin-top: 4vh;
+    width: 350px;
+}
+.boxTextaWard h3{
+    font-size: 1.2em;
+    color: rgb(121, 119, 117);
+
+}
+.boxTextaWard p{
+    font-size: 1.0em;
+    padding-bottom: 5vh;
+    color: rgb(121, 119, 117);
+}
+.containerImg{
+    width: 100vw;
+    height: 100vh;
+}
+.containerImg video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.uus{
+    position: relative;
+    inset: 0 auto;
+    top: 50%;
+    
+    
+    z-index: 100;
+    text-align: center;
+   
+}
+
+@media (max-width: 1500px) {
+    
+    .boxTextaWard {
+        width: 40vw;
+    }
+    .boxTextaWard h1{
+        font-weight: 500;
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+        font-size: 4em;
+    }
+    .ConatAwards{
+        width: 100vw;
+        height: auto;
+    }
+}
+@media (max-width: 1350px) {
+    
+    .ContainerAwards {
+        width: 95vw;
+        margin: auto;
+        height: auto;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 40% auto;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .boxImgAwards img {
+        width: 500px;
+    }
+    .boxTextaWard {
+        width: 40vw;
+    }
+    .boxTextaWard h1 {
+        font-size: 3em;
+    }
+    .boxTextaWard p {
+        font-size: 0.8em;
+        padding-bottom: 3vh;
+        color: rgb(121, 119, 117);
+        width: 40vw;
+    }
+}
+@media (max-width: 1180px) {
+    
+    .ContainerAwards {
+        width: 95vw;
+        margin: auto;
+        height: auto;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 40% 40%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .boxImgAwards img {
+        width: 400px;
+    }
+    
+}
+@media (max-width: 980px) {
+    
+    
+    .boxImgAwards img {
+        width: 300px;
+    }
+    .boxTextaWard .imgName {
+        margin-top: 4vh;
+        width: 250px;
+    }
+
+    
+}
+@media (max-width: 740px) {
+    
+    
+    .ContainerAwards {
+        width: 95vw;
+        margin: auto;
+        height: auto;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: auto;
+        padding-top: 10vh;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .boxImgAwards img {
+        width: 400px;
+    }
+    .boxTextaWard {
+        margin-top: 10vh;
+        width: 80vw;
+    }
+    .boxTextaWard h1 {
+        font-size: 3.5em;
+    }
+    .boxTextaWard p {
+        font-size: 1em;
+        padding-bottom: 5vh;
+        color: rgb(121, 119, 117);
+        width: 80vw;
+    }
+    
+}
+@media (max-width: 600px) {
+    
+    .boxTextaWard h1 {
+        font-size: 3em;
+    }
+    .boxTextaWard p {
+        font-size: 1em;
+        
+        
+    }
+    
+    
+}
+@media (max-width: 490px) {
+    
+    .boxTextaWard h1 {
+        font-size: 2.5em;
+    }
+    .boxTextaWard p {
+        font-size: 0.8em;
+        width: 90vw;
+        
+    }
+    .boxTextaWard{
+        margin-left: 20px;
+    }
+    
+}
+@media (max-width: 390px) {
+    
+    .boxTextaWard h1 {
+        font-size: 2em;
+    }
+    .boxTextaWard p {
+        font-size: 0.8em;
+        width: 90vw;
+        
+    }
+    .boxTextaWard{
+        margin-left: 50px;
+    }
+    
+}
+@media (max-width: 325px) {
+    
+    .boxTextaWard h1 {
+        font-size: 1.8em;
+    }
+    .boxTextaWard p {
+        font-size: 0.8em;
+        width: 90vw;
+        
+    }
+    .boxTextaWard{
+        margin-left: 40px;
+    }
+    .boxTextaWard .imgName {
+        margin-top: 4vh;
+        width: 180px;
+    }
+    .boxImgAwards img {
+        width: 320px;
+    }
+}
+
