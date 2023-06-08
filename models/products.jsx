@@ -5,6 +5,7 @@ const Produto = mongoose.model("produtos", {
     valorProduto: Number,
     urlProduto: String,
     tempoProduto: Number,
+    tipo: String,
 })
 
 

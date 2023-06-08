@@ -1,8 +1,13 @@
 import React, {useEffect,useState}from 'react'
-import axios from 'axios'
 import styled from 'styled-components'
 import bg from '../../../public/bg.png'
-import SingInAdmin from '../../singInAdmin/singInAdmin'
+import MostrarTodos from '../../../components/mostrarTodos/mostrarTodos'
+import logo from "../../../public/gericht.png";
+import Bebidas from '../../../components/bebidas/bebida';
+import Comida from '../../../components/comidas/comida';
+import Entrada from '../../../components/entradas/entradas';
+
+
 
 const Container = styled.div`
   width: 100vw;
@@ -11,102 +16,100 @@ const Container = styled.div`
   background-image: url(${bg});
   display: flex;
   justify-content: center;
+  align-items: start;
+  color: white;
+`;
+
+const MenuLateral = styled.div`
+  width: 400px;
+  min-height: 100vh;
+
+  cursor: pointer;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px;
   align-items: center;
+  justify-content: center;
   color: white;
 `;
-
-const Imgs = styled.img`
-  width: 200px;
+const Box = styled.div`
+  width: calc(100vw - 400px);
   height: auto;
-  
+  min-height: 100vh;
+  display: block;
+  flex-direction: column;
+  align-items: start;
   color: white;
+  margin-bottom: 50px;
+`;
+const Nav = styled.div`
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+`;
+
+const Logo = styled.img`
+  width: 200px;
+  padding: 20px 50px;
 `;
 
 
 
 
-export default class FuncionarioIndex extends React.Component{
-    
 
-    //usando o state do react para criar um list de carros
-    state={
-        produtos:[],  
-    }
-    
-    //criando um function acinada para pegar os dados do backend
-    componentDidMount(){
-        axios.get('http://localhost:8080/login/funcionarios/produtos')
-        .then(res => {
-            
-            //colocando todos os dados que pegamos do backend no dadosCarros
-            const produto=res.data;
-            console.log(res.data)
 
-            //usando a funçao setState para colocar todos os dados de dadosCarros em carros
-            this.setState({produtos: produto})
-        })
+
+export const FuncionarioIndex = () => {
+    
+    const [tela, setTela] = useState()
+
+    
+    const linkPaginas = (e) =>{
+        setTela(e)
     }
 
-    
-    
-    
-
-    render() {
-        
-        const [tela, setTela] = useState(0)
-
-        useEffect(() => {
-            const url = window.location.href
-            const res = url.split('?')
-            setTela(res[1])
-        })
-
-        const linkPaginas = (e) => {
-            if(e == 1) {
-            window.open('http://localhost:3000/admin/index','_self')
-            } else if (e == 2) {
-            window.open('http://localhost:3000/admin/index?2','_self')
-            } 
+    const returnPages = () => {
+        if(tela == 1) {
             
+            return <MostrarTodos />
+        } else if (tela == 2){
+            return <Bebidas/>
+        } else if (tela == 3){
+            return <Comida/>
+        } else if (tela == 4){
+            return <Entrada/>
         }
-
-
-        const retunrpage = () => {
-            if(tela == 1){
-            return 
-            } else if (tela == 2) {
-            return <SingInAdmin/>
-            } 
-        }
-
+    
+    }
+    
 
         return(
-            <Container>
-                
-
-                
-                
-                
-                {
-                    //pegando todos os dados que estão na lista carro no state e mapeando e colocando em carro
-                    this.state.produtos.map(produto=>
-
-                        //mostrando os dados mapeados
-                        <div  key={produto._id}>
-                            <p>{produto.nomeProduto}</p>
-                            <p>{produto.tempoProduto}</p> 
-                            <p>R$: {produto.valorProduto}</p>  
-                            <Imgs src={produto.urlProduto}/> 
-                            {retunrpage()}                      
+            <>
+                <Container>
+                    <MenuLateral>
+                        <div>
+                            <Logo src={logo} />
                         </div>
-
-                        
-                        
-                    )
-                }
-                <button onClick={() => linkPaginas(2)}>dawd</button>
-                
-            </Container>
+                        <div onClick={() => linkPaginas(1)}>Produtos</div>
+                        <div onClick={() => linkPaginas(1)}>Pedidos</div>
+                        <div onClick={() => linkPaginas(1)}>Funcionarios</div>
+                        <div onClick={() => linkPaginas(1)}>dashboard</div>
+                    </MenuLateral>
+                    <Box>
+                        <Nav>
+                            <div onClick={() => linkPaginas(1)}>Mostrar todos</div>
+                            <div onClick={() => linkPaginas(2)}>Bebidas</div>
+                            <div onClick={() => linkPaginas(3)}>Comidas</div>
+                            <div onClick={() => linkPaginas(4)}>Entradas</div>
+                        </Nav>
+                        {/* aonde as paginas vão ser carregadas */}
+                        {returnPages()}
+                    </Box>
+                    
+                    
+                </Container>
+            </>
         )
-    }
 }

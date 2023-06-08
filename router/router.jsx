@@ -209,7 +209,7 @@ router.delete('/:id', async (req, res) => {
     //path para a criação de novos produtos
         router.post("/funcionarios/produto", async (req,res) => {
 
-            const {nomeProduto, valorProduto, urlProduto, tempoProduto} = req.body
+            const {nomeProduto, valorProduto, urlProduto, tempoProduto, tipo} = req.body
 
 
             //criando um Json para receber os dados que pegamos da requisição
@@ -217,7 +217,8 @@ router.delete('/:id', async (req, res) => {
                 nomeProduto,
                 valorProduto,
                 urlProduto,
-                tempoProduto
+                tempoProduto,
+                tipo
             }
 
             
@@ -259,16 +260,20 @@ router.delete('/:id', async (req, res) => {
         })
 
 
-    // verificação se usuario existe
-    router.get('/funcionarios/produto/:id', async (req,res) => {
+    // buscando um dado filtado do banco de dados
+    router.get('/funcionarios/produto/filtado/:id', async (req,res) => {
         //extrair os dados da requisição
-        const name = req.params.id
+        const dados = req.params.id
         
         
 
         try{
-            const adnmins = await Admins.findOne({name: name})
-            res.status(200).json(adnmins)
+            const tipos = await Produto.find()
+
+            const tipoFiltrado = tipos.filter(item => item.tipo == dados)
+            
+
+            res.status(200).json(tipoFiltrado)
             
 
         } catch (error) {

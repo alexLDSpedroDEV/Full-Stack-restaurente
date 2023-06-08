@@ -9,7 +9,8 @@ import Login from './page/login/login'
 import SingIn from './page/sing-in/sing-in'
 import Catalogo from './page/catalogo/catalogo'
 import SingInAdmin from './page/singInAdmin/singInAdmin'
-import FuncionarioIndex from './page/funcionarioPages/index'
+import { FuncionarioIndex } from './page/funcionarioPages/index'
+
 
 
 function App() {
