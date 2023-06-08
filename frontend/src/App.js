@@ -6,8 +6,9 @@ import React, { useEffect, useState } from 'react'
 import { Folder } from './components/folder/folder'
 import { Main } from './page/main/main'
 import Login from './page/login/login'
-
-
+import SingIn from './page/sing-in/sing-in'
+import Catalogo from './page/catalogo/catalogo'
+import SingInAdmin from './page/singInAdmin/singInAdmin'
 
 
 function App() {
@@ -39,11 +40,22 @@ function App() {
           <Router>
             <Navbar acao={ativaCor}/>
             <Routes>
-              <Route path="/index" element={<Main />} />
-              <Route path="/shop" element={<Main/>} />
-              <Route path="/card" element={<Main/>} />
-              <Route path="/logar" element={<Main/>} />
-              <Route path="/login" element={<Login/>} />
+              {/* criando os path para a pagina index */}
+              <Route path="/"         element={<Main />} />
+              <Route path="/index"    element={<Main />} />
+              <Route path="/shop"     element={<Main />} />
+              <Route path="/card"     element={<Main />} />
+
+              {/* criando os path para os usuarios do site */}
+              <Route path="/login"    element={<Login />} />
+              <Route path="/singin"   element={<SingIn />} />
+              <Route path="/login/true/thfjhhdbawkjudhnaudauwjj/catalogo"   element={<Catalogo />} />
+              
+
+              {/* criando as path para os funcionarios */}
+              <Route path="/admin"   element={<SingInAdmin />} />
+              <Route path="/admin/areaDeTrabalho"   element={<SingInAdmin />} />
+              
             </Routes>
             <Folder />
           </Router>

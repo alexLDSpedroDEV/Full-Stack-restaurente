@@ -8,6 +8,7 @@ const router = require('./router/router.jsx')
 const app = express()
 const PORT = "8080"
 
+app.use(cors())
 
 app.use(
     //comando para o express pode receber dados json
@@ -19,7 +20,7 @@ app.use(
 //mostrando para o express que eu vou mandar dados como JSON
 app.use(express.json())
 
-app.use(cors())
+
 
 //Criando as Rotas
 app.get("/", async (req, res) => {

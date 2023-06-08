@@ -65,7 +65,7 @@ const DivForm = styled.div`
 
 
 
-export default class CreatedCar extends React.Component{
+export default class SingIn extends React.Component{
     
     
 
@@ -76,7 +76,7 @@ export default class CreatedCar extends React.Component{
         
         //estou criando json para enviar ao backend
         this.state = {
-            name: "",
+
             senha: "",
             email: "", 
         }
@@ -90,18 +90,30 @@ export default class CreatedCar extends React.Component{
     handleSubmit(e) {
         //pevinindo recarregamento da pagina
         e.preventDefault();
+
+        
         
         
         //enviando os dados do state (json que criamos) para a url do backend
-        axios.post('http://localhost:8080/login', this.state)
+        axios.get(`http://localhost:8080/login/` + this.state.email)
         .then(res => {
-            alert("Registrado com sucesso")
-            window.open('http://localhost:3000/login/catalago','_self')
+            const dado = res.data
+            if (dado.email == this.state.email && dado.senha == this.state.senha) {
+                alert("Bem vindo so sistema de pedidos gericht")
+                window.history.go(null,null, "http://localhost:3000/index/#Home")
+                
+            } else {
+                //se o email ou a senha estiverem erradas ele da um aviso e reload na pagina 
+                alert("Usuario ou senha estão incoretos")
+                window.location.reload()
+            }
+           
         })
    
     }
     openPag(){
-        window.open('http://localhost:3000/login/catalago','_self')
+        window.history.go(null,null, "http://localhost:3000/login")
+        
     }
     
     
@@ -111,20 +123,10 @@ export default class CreatedCar extends React.Component{
                 <Container>
                     <FormNewCar  onSubmit={this.handleSubmit}>
 
-                        <Title>Registrar</Title>
+                        <Title>Sing-in</Title>
 
                         <DivForm>
-                            <Label>Qual o seu nome</Label>
-                            <Input
-                            placeholder='Digite o nome do carro'
-                            type='text'
-                            className='form_input'
-                            onChange={ e => this.setState({name: e.target.value})}
-                            />
-                        </DivForm>
-
-                        <DivForm>
-                            <Label>Qual o seu Email</Label>
+                            <Label>Digite o seu Email</Label>
                             <Input
                             placeholder='Digite o seu email'
                             type='email'
@@ -143,9 +145,9 @@ export default class CreatedCar extends React.Component{
                             />
                         </DivForm>
 
-                        <Button type='submit' >Enviar</Button>
+                        <Button type='submit'>Entrar</Button>
                     </FormNewCar>
-                    <button type='text' onClick={() => this.openPag()}>Sing-in</button>
+                    <button type='text' onClick={() => this.openPag()}>Registrase</button>
                 </Container>
                 
             </div>

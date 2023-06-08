@@ -26,6 +26,7 @@ export const Navbar = ({acao}) => {
                     <a className="link" href="/index/#Awards">Awards</a>
                     <a className="link" href="/index/#contact">Contact</a>
                     <a className="link" href="/login">Login</a>
+                    <a className="link" href="/singin">Sing-in</a>
                     
                 </div>
                 <span className="links" onClick={() => setSignUp(true)}>
@@ -41,6 +42,8 @@ export const Navbar = ({acao}) => {
                         <li>  <a className="link" href="#Menu" onClick={() => setSignUp(false)}> Menu </a> </li>
                         <li> <a className="link" href="#Awards" onClick={() => setSignUp(false)}>Awards</a> </li>
                         <li> <a className="link" href="#contact" onClick={() => setSignUp(false)}>Contact</a> </li>
+                        <li> <a className="link" href="/login">Login</a> </li>
+                        <li> <a className="link" href="/singin">Sing-in</a> </li>
                     </ul>
                     <span className="span" onClick={() => setSignUp(false)}> x </span>
 

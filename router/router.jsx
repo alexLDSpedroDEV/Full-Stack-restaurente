@@ -15,19 +15,21 @@ router.get('/', async (req,res) => {
     }
 })
 
-
+// verificação se usuario existe
 router.get('/:id', async (req,res) => {
     //extrair os dados da requisição
-    const id = req.params.id
+    const email = req.params.id
+    
+    console.log(email)
 
     try{
-        const newCar = await Pessoas.findOne({_id: id})
-        //se encontrar a pessoas ele vai retornar TRUE
-        res.status(200).json(true)
-       
+        const pessoa = await Pessoas.findOne({email: email})
+        res.status(200).json(pessoa)
+        console.log(pessoa)
 
     } catch (error) {
-        res.status(500).json({error: error})
+        res.status(500).json(error)
+        console.log(error)
     }
 })
 
@@ -164,18 +166,21 @@ router.delete('/admin/:id', async (req, res) => {
 })
 
 
-router.get('/:id', async (req,res) => {
+// verificação se usuario existe
+router.get('/admin/:id', async (req,res) => {
     //extrair os dados da requisição
-    const id = req.params.id
+    const name = req.params.id
+    
+    console.log(name)
 
     try{
-        const newCar = await Admins.findOne({_id: id})
-        //se encontrar a pessoas ele vai retornar TRUE
-        res.status(200).json(true)
-       
+        const adnmins = await Admins.findOne({name: name})
+        res.status(200).json(adnmins)
+        console.log(adnmins)
 
     } catch (error) {
-        res.status(500).json({error: error})
+        res.status(500).json(error)
+        console.log(error)
     }
 })
 
