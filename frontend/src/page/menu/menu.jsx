@@ -3,6 +3,7 @@ import './menu.css'
 import drink from '../../public/menu.png'
 import dec from '../../public/spoon.png'
 
+
 export const Menu = () => {
     
     return <div class="ConatMenu">

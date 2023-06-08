@@ -9,36 +9,18 @@ import Login from './page/login/login'
 import SingIn from './page/sing-in/sing-in'
 import Catalogo from './page/catalogo/catalogo'
 import SingInAdmin from './page/singInAdmin/singInAdmin'
+import FuncionarioIndex from './page/funcionarioPages/index'
 
 
 function App() {
   
-  
 
-
-
-  const [ativaCor, setAtivar] = useState(false);
-  
-
-
-
-  useEffect(function(){
-    function posScoll(){
-        if(window.scrollY > 40){
-          setAtivar(true)
-        } else {
-          setAtivar(false)
-        }
-      }
-
-      window.addEventListener('scroll', posScoll)
-  }, [])
 
   return (
     <section > 
         
           <Router>
-            <Navbar acao={ativaCor}/>
+            
             <Routes>
               {/* criando os path para a pagina index */}
               <Route path="/"         element={<Main />} />
@@ -54,10 +36,10 @@ function App() {
 
               {/* criando as path para os funcionarios */}
               <Route path="/admin"   element={<SingInAdmin />} />
-              <Route path="/admin/areaDeTrabalho"   element={<SingInAdmin />} />
+              <Route path="/admin/index"   element={<FuncionarioIndex />} />
               
             </Routes>
-            <Folder />
+            
           </Router>
          
         

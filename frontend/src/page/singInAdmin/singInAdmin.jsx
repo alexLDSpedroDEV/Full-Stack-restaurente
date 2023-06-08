@@ -99,7 +99,7 @@ export default class SingInAdmin extends React.Component{
             if (dado.name == this.state.name && dado.senha == this.state.senha) {
                 alert("Bem vindo so sistema de pedidos gericht")
                 
-                window.open("http://localhost:3000/admin/areaDeTrabalho", "_self")
+                window.open("http://localhost:3000/admin/index", "_self")
                 
             } else {
                 //se o email ou a senha estiverem erradas ele da um aviso e reload na pagina 
