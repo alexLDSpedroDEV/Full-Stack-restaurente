@@ -1,10 +1,7 @@
 import React, {useEffect,useState}from 'react'
 import styled from 'styled-components'
 import bg from '../../../public/bg.png'
-import MostrarTodos from '../../../components/mostrarTodos/mostrarTodos'
-import Bebidas from '../../../components/bebidas/bebida';
-import Comida from '../../../components/comidas/comida';
-import Entrada from '../../../components/entradas/entradas';
+import Ped from '../../../components/ped/ped';
 
 
 
@@ -72,14 +69,8 @@ export const Pedidos = () => {
     const returnPages = () => {
         if(tela == 1) {
             
-            return <MostrarTodos />
-        } else if (tela == 2){
-            return <Bebidas/>
-        } else if (tela == 3){
-            return <Comida/>
-        } else if (tela == 4){
-            return <Entrada/>
-        }
+            return <Ped />
+        } 
     
     }
     
@@ -88,13 +79,7 @@ export const Pedidos = () => {
             <>
                 <Container>
                     <Box>
-                        <Nav>
-                            
-                            <div onClick={() => linkPaginas(1)}>Mostrar todos</div>
-                            <div onClick={() => linkPaginas(2)}>Bebidas</div>
-                            <div onClick={() => linkPaginas(3)}>Comidas</div>
-                            <div onClick={() => linkPaginas(4)}>Entradas</div>
-                        </Nav>
+                        
                         {/* aonde as paginas vão ser carregadas */}
                         {returnPages()}
                     </Box>

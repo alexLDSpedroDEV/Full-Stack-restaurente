@@ -5,7 +5,11 @@ import MostrarTodos from '../../../components/mostrarTodos/mostrarTodos'
 import Bebidas from '../../../components/bebidas/bebida';
 import Comida from '../../../components/comidas/comida';
 import Entrada from '../../../components/entradas/entradas';
+import AddNewFood from '../../../components/addNewFood/addNewFood';
 
+
+//importando os icons da pagina
+import { AiOutlinePlus } from 'react-icons/ai';
 
 
 const Container = styled.div`
@@ -47,6 +51,7 @@ const Nav = styled.div`
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  color: #d2c69e;
 `;
 
 const Logo = styled.img`
@@ -54,7 +59,16 @@ const Logo = styled.img`
   padding: 20px 50px;
 `;
 
-
+const Add = styled.div`
+    :hover{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    font-size: 1.8em;
+    color: #d2c69e;
+    padding: 0px 25px;
+     
+`
 
 
 
@@ -79,6 +93,8 @@ export const Produtos = () => {
             return <Comida/>
         } else if (tela == 4){
             return <Entrada/>
+        } else if (tela == 5){
+            return <AddNewFood/>
         }
     
     }
@@ -93,6 +109,7 @@ export const Produtos = () => {
                             <div onClick={() => linkPaginas(2)}>Bebidas</div>
                             <div onClick={() => linkPaginas(3)}>Comidas</div>
                             <div onClick={() => linkPaginas(4)}>Entradas</div>
+                            <Add onClick={() => linkPaginas(5)}><AiOutlinePlus/></Add>
                         </Nav>
                         {/* aonde as paginas vão ser carregadas */}
                         {returnPages()}
