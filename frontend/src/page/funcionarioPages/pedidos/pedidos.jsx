@@ -1,10 +1,11 @@
 import React, {useEffect,useState}from 'react'
 import styled from 'styled-components'
 import bg from '../../../public/bg.png'
-import { Produtos } from '../produtos/produtos';
-import logo from "../../../public/gericht.png";
-import { Pedidos } from '../pedidos/pedidos';
-import { Funcionarios } from '../funcionarios/funcionarios';
+import MostrarTodos from '../../../components/mostrarTodos/mostrarTodos'
+import Bebidas from '../../../components/bebidas/bebida';
+import Comida from '../../../components/comidas/comida';
+import Entrada from '../../../components/entradas/entradas';
+
 
 
 const Container = styled.div`
@@ -21,12 +22,13 @@ const Container = styled.div`
 const MenuLateral = styled.div`
   width: 400px;
   min-height: 100vh;
+
+  cursor: pointer;
   background-color: black;
   display: grid;
   grid-template-rows: 100px 100px 100px 100px 100px;
   align-items: center;
-  padding: 0px 45px;
-  justify-items: start;
+  justify-content: center;
   color: white;
 `;
 const Box = styled.div`
@@ -58,9 +60,9 @@ const Logo = styled.img`
 
 
 
-export const FuncionarioIndex = () => {
+export const Pedidos = () => {
     
-    const [tela, setTela] = useState()
+    const [tela, setTela] = useState(1)
 
     
     const linkPaginas = (e) =>{
@@ -69,29 +71,34 @@ export const FuncionarioIndex = () => {
 
     const returnPages = () => {
         if(tela == 1) {
-            return <Produtos />
+            
+            return <MostrarTodos />
         } else if (tela == 2){
-            return <Pedidos />
+            return <Bebidas/>
         } else if (tela == 3){
-          return <Funcionarios />
+            return <Comida/>
+        } else if (tela == 4){
+            return <Entrada/>
         }
+    
     }
     
 
         return(
             <>
                 <Container>
-                    <MenuLateral>
-                        <div>
-                            <Logo src={logo} />
-                        </div>
-                        <div onClick={() => linkPaginas(1)}>Produtos</div>
-                        <div onClick={() => linkPaginas(2)}>Pedidos</div>
-                        <div onClick={() => linkPaginas(3)}>Funcionarios</div>
-                        <div onClick={() => linkPaginas(4)}>dashboard</div>
-                    </MenuLateral>
+                    <Box>
+                        <Nav>
+                            
+                            <div onClick={() => linkPaginas(1)}>Mostrar todos</div>
+                            <div onClick={() => linkPaginas(2)}>Bebidas</div>
+                            <div onClick={() => linkPaginas(3)}>Comidas</div>
+                            <div onClick={() => linkPaginas(4)}>Entradas</div>
+                        </Nav>
+                        {/* aonde as paginas vão ser carregadas */}
+                        {returnPages()}
+                    </Box>
                     
-                    {returnPages()}
                     
                 </Container>
             </>

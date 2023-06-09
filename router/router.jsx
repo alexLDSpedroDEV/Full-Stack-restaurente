@@ -20,7 +20,7 @@ router.get('/', async (req,res) => {
 router.get('/:id', async (req,res) => {
     //extrair os dados da requisição
     const email = req.params.id
-    console.log("teste")
+    
     
 
 
@@ -100,8 +100,9 @@ router.delete('/:id', async (req, res) => {
 // criando as rotas dos funcionarios 
 
     //criando a rota de login dos admins do site
-        router.get('/admin', async (req,res) => {
+        router.get('/admin/funcionarios', async (req,res) => {
             try{
+                
                 //find  - buscando dados
                 const pessoas = await Admins.find()
 
@@ -113,8 +114,8 @@ router.delete('/:id', async (req, res) => {
         })
 
     //rota Created 
-        router.post("/admin", async (req,res) => {
-            const {name, email, senha} = req.body
+        router.post("/login/admin", async (req,res) => {
+            const {name, email, senha, cargo} = req.body
 
             //tornando os dados obrigatoria a vir
             !name ? res.status(422).json({error: "O Nome é obrigatorio"}) : ""
@@ -127,7 +128,8 @@ router.delete('/:id', async (req, res) => {
             const admin = {
                 name,
                 email,
-                senha
+                senha,
+                cargo
             }
 
             //usando o metodo created
@@ -244,12 +246,12 @@ router.delete('/:id', async (req, res) => {
             try {
                 console.log(id)
                 // Atualiza o documento no MongoDB
-                const result = await Produto.deleteOne({ _id: id });
+                const result = await Admins.deleteOne({ _id: id });
 
                 if (result.deletedCount === 1) {
-                    res.send('produto deletado com sucesso');
+                    res.send('Funcionario deletado com sucesso');
                 } else {
-                    res.status(404).send('Admin não encontrado');
+                    res.status(404).send('Funcionario não encontrado');
                 }
             } 
             catch (error) {
