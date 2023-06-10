@@ -1,67 +1,28 @@
 import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import bg from '../../public/bg.png'
+import laurels from '../../public/laurels.png'
+import { Navbar } from '../../components/navbar/navbar'
 
-/* estilizaçõa do Styled-components */
-const Button = styled.button`
-  color: black;
-  font-size: 1em;
-  margin: 1em;
-  width: 400px;
-  height: 60px;
-  margin-top: 100px;
-`;
-const Container = styled.div`
-  width: 100vw;
-  height: auto;
-  min-height: 100vh;
-  background-image: url(${bg});
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const FormNewCar = styled.form`
-    width: 90vw;
-    height: 70vh;
-
-    margin: auto;
-    display: grid;
-    justify-content: center;
-    align-content: space-around;
-    border-radius: 50px;
-`;
+//importando os estilos do styled-components
+import { Container } from '../../styles/styledComponets'
+import { Button } from '../../styles/styledComponets'
+import { Form } from '../../styles/styledComponets'
+import { Title } from '../../styles/styledComponets'
+import { SubTitle } from '../../styles/styledComponets'
+import { TitleLink } from '../../styles/styledComponets'
+import { Input } from '../../styles/styledComponets'
+import { Label } from '../../styles/styledComponets'
+import { DivForm } from '../../styles/styledComponets'
+import { BoxForms } from '../../styles/styledComponets'
+import { BoxImg } from '../../styles/styledComponets'
+import { ImgHome } from '../../styles/styledComponets'
 
 
-const Title = styled.h1`
-    font-size: 3em;
-    color: white;
-    text-transform: uppercase; 
-`;
-
-const Input = styled.input`
-    width: 400px;
-    padding: 10px 20px;
-
-`;
-
-const Label = styled.label`
-    display: block;
-    padding: 20px 0px;
-    font-size: 1em;
-    color: white;
-
-`;
-
-const DivForm = styled.div`
-    display: grid;
-    justify-content: center;
-    align-content: center;
-
-`;
-
-
+//estilização unicas da pagina
+const Btn = styled(Button)`
+    margin-top: 25px;
+`
 
 
 
@@ -101,51 +62,59 @@ export default class CreatedCar extends React.Component{
    
     }
     openPag(){
-        window.open('http://localhost:3000/login/catalago','_self')
+        window.open('http://localhost:3000/singin','_self')
     }
     
     
     render() {
         return(
             <div>
+                <Navbar />
                 <Container>
-                    <FormNewCar  onSubmit={this.handleSubmit}>
+                    
+                    <Form  onSubmit={this.handleSubmit}>
+                        <div>
+                            <Title>Criar uma nova conta</Title>
+                            <SubTitle>Se você ja tem uma conta? <TitleLink href="/singin">Login</TitleLink></SubTitle>
+                        </div>
+                        <BoxForms>
+                            <DivForm>
+                                <Label>Qual o seu nome</Label>
+                                <Input
+                                placeholder='Digite o nome do carro'
+                                type='text'
+                                className='form_input'
+                                onChange={ e => this.setState({name: e.target.value})}
+                                />
+                            </DivForm>
 
-                        <Title>Registrar</Title>
+                            <DivForm>
+                                <Label>Qual o seu Email</Label>
+                                <Input
+                                placeholder='Digite o seu email'
+                                type='email'
+                                className='form_input'
+                                onChange={ e => this.setState({email: e.target.value})}
+                                />
+                            </DivForm>
 
-                        <DivForm>
-                            <Label>Qual o seu nome</Label>
-                            <Input
-                            placeholder='Digite o nome do carro'
-                            type='text'
-                            className='form_input'
-                            onChange={ e => this.setState({name: e.target.value})}
-                            />
-                        </DivForm>
-
-                        <DivForm>
-                            <Label>Qual o seu Email</Label>
-                            <Input
-                            placeholder='Digite o seu email'
-                            type='email'
-                            className='form_input'
-                            onChange={ e => this.setState({email: e.target.value})}
-                            />
-                        </DivForm>
-
-                        <DivForm>
-                            <Label>Senha</Label>
-                            <Input
-                            placeholder='Digite a sua senha'
-                            type='password'
-                            className='form_input'
-                            onChange={ e => this.setState({senha: e.target.value})}
-                            />
-                        </DivForm>
-
-                        <Button type='submit' >Enviar</Button>
-                    </FormNewCar>
-                    <button type='text' onClick={() => this.openPag()}>Sing-in</button>
+                            <DivForm>
+                                <Label>Senha</Label>
+                                <Input
+                                placeholder='Digite a sua senha'
+                                type='password'
+                                className='form_input'
+                                onChange={ e => this.setState({senha: e.target.value})}
+                                />
+                            </DivForm>
+                        </BoxForms>    
+                        
+                        <Btn type='submit' >Enviar</Btn>
+                        
+                    </Form>
+                    <BoxImg>
+                        <ImgHome src={laurels} alt="" />
+                    </BoxImg>
                 </Container>
                 
             </div>

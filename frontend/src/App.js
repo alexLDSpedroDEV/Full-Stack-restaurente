@@ -1,16 +1,15 @@
 /* import TelaDeLogin from './componentes/TelaDeLogin' */
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import { Navbar } from "./components/navbar/navbar"
 
-import React, { useEffect, useState } from 'react'
-import { Folder } from './components/folder/folder'
-import { Main } from './page/main/main'
+
+import React from 'react'
+
 import Login from './page/login/login'
 import SingIn from './page/sing-in/sing-in'
-import Catalogo from './page/catalogo/catalogo'
+import Catalogo from './components/catalogo/catalogo'
 import SingInAdmin from './page/singInAdmin/singInAdmin'
 import { FuncionarioIndex } from './page/funcionarioPages/index'
-
+import { Main } from './page/main/main'
 
 
 function App() {

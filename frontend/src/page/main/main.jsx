@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react"; 
 import './main.css'
-import { Header } from '../header/header'
-import { About } from '../about/about'
-import { Menu } from '../menu/menu'
-import { Awards } from '../awards/awards'
-import { Laurels } from '../laurels/laurels'
-import { Photo } from '../photo/photo'
+import { Header } from '../../components/header/header'
+import { About } from '../../components/about/about'
+import { Menu } from '../../components/menu/menu'
+import { Awards } from '../../components/awards/awards'
+import { Laurels } from '../../components/laurels/laurels'
+import { Photo } from '../../components/photo/photo'
 import { Navbar } from "../../components/navbar/navbar";
 import { Folder } from "../../components/folder/folder";
  

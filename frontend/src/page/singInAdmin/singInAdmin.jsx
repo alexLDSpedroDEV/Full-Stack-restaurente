@@ -1,66 +1,32 @@
 import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import bg from '../../public/bg.png'
+import funcionarios from '../../public/funcionarios.jpg'
+import { Navbar } from '../../components/navbar/navbar'
+import welcome from '../../public/welcome.png'
+
+//importando os estilos do styled-components
+import { Container } from '../../styles/styledComponets'
+import { Button } from '../../styles/styledComponets'
+import { Form } from '../../styles/styledComponets'
+import { Title } from '../../styles/styledComponets'
+import { SubTitle } from '../../styles/styledComponets'
+import { TitleLink } from '../../styles/styledComponets'
+import { Input } from '../../styles/styledComponets'
+import { Label } from '../../styles/styledComponets'
+import { DivForm } from '../../styles/styledComponets'
+import { BoxForms } from '../../styles/styledComponets'
+import { BoxImg } from '../../styles/styledComponets'
+import { ImgHome } from '../../styles/styledComponets'
+
+
 
 /* estilizaçõa do Styled-components */
-const Button = styled.button`
-  color: black;
-  font-size: 1em;
-  margin: 1em;
-  width: 400px;
-  height: 60px;
-  margin-top: 100px;
-`;
-const Container = styled.div`
-  width: 100vw;
-  height: auto;
-  min-height: 100vh;
-  background-image: url(${bg});
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const FormNewCar = styled.form`
-    width: 90vw;
-    height: 70vh;
-
-    margin: auto;
-    display: grid;
-    justify-content: center;
-    align-content: space-around;
-    border-radius: 50px;
-`;
-
-
-const Title = styled.h1`
-    font-size: 3em;
-    color: white;
-    text-transform: uppercase; 
-`;
-
-const Input = styled.input`
-    width: 400px;
-    padding: 10px 20px;
-
-`;
-
-const Label = styled.label`
-    display: block;
-    padding: 20px 0px;
-    font-size: 1em;
-    color: white;
-
-`;
-
-const DivForm = styled.div`
-    display: grid;
-    justify-content: center;
-    align-content: center;
-
-`;
-
+// estilização unicas 
+const BoxFormsEdit = styled(BoxForms)`
+    height: 250px;
+    margin-bottom: 50px;
+`
 
 
 
@@ -119,34 +85,40 @@ export default class SingInAdmin extends React.Component{
     render() {
         return(
             <div>
+                <Navbar />
                 <Container>
-                    <FormNewCar  onSubmit={this.handleSubmit}>
+                    <Form  onSubmit={this.handleSubmit}>
+                        <div>
+                            <Title>Entrar com a sua conta</Title>
+                        </div>
+                        <BoxFormsEdit>
+                            <DivForm>
+                                <Label>nome</Label>
+                                <Input
+                                placeholder='Digite o seu nome'
+                                type='text'
+                                className='form_input'
+                                onChange={ e => this.setState({name: e.target.value})}
+                                />
+                            </DivForm>
 
-                        <Title>Admins Sing-in </Title>
-
-                        <DivForm>
-                            <Label>Digite o seu nome</Label>
-                            <Input
-                            placeholder='Digite o seu email'
-                            type='text'
-                            className='form_input'
-                            onChange={ e => this.setState({name: e.target.value})}
-                            />
-                        </DivForm>
-
-                        <DivForm>
-                            <Label>Senha</Label>
-                            <Input
-                            placeholder='Digite a sua senha'
-                            type='password'
-                            className='form_input'
-                            onChange={ e => this.setState({senha: e.target.value})}
-                            />
-                        </DivForm>
-
-                        <Button type='submit'>Entrar</Button>
-                    </FormNewCar>
-                    <button type='text' onClick={() => this.openPag()}>Registrase</button>
+                            <DivForm>
+                                <Label>Senha</Label>
+                                <Input
+                                placeholder='Digite a sua senha'
+                                type='password'
+                                className='form_input'
+                                onChange={ e => this.setState({senha: e.target.value})}
+                                />
+                            </DivForm>
+                        </BoxFormsEdit>    
+                        
+                        <Button type='submit' >Entrar</Button>
+                        
+                    </Form>
+                    <BoxImg>
+                        <ImgHome src={welcome} alt="" />
+                    </BoxImg>
                 </Container>
                 
             </div>
