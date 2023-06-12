@@ -10,6 +10,7 @@ import Catalogo from './components/catalogo/catalogo'
 import SingInAdmin from './page/singInAdmin/singInAdmin'
 import { FuncionarioIndex } from './page/funcionarioPages/index'
 import { Main } from './page/main/main'
+import { UserIndex } from './page/usersPages/index'
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
               {/* criando os path para os usuarios do site */}
               <Route path="/login"    element={<Login />} />
               <Route path="/singin"   element={<SingIn />} />
-              <Route path="/login/true/thfjhhdbawkjudhnaudauwjj/catalogo"   element={<Catalogo />} />
+              <Route path="/login/true/index"   element={<UserIndex />} />
               
 
               {/* criando as path para os funcionarios */}

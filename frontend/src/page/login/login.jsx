@@ -57,13 +57,11 @@ export default class CreatedCar extends React.Component{
         axios.post('http://localhost:8080/login', this.state)
         .then(res => {
             alert("Registrado com sucesso")
-            window.open('http://localhost:3000/login/catalago','_self')
+            window.open('http://localhost:3000/login/true/index','_self')
         })
    
     }
-    openPag(){
-        window.open('http://localhost:3000/singin','_self')
-    }
+    
     
     
     render() {

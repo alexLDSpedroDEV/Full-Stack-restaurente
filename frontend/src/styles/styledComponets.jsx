@@ -6,7 +6,7 @@ export const Container = styled.div`
     width: 100vw;
     height: auto;
     min-height: 100vh;
-    max-height: 100vh;
+    
     background-image: url(${bg});
     display: grid;
     overflow: hidden;

@@ -54,7 +54,7 @@ export default class SingIn extends React.Component{
             const dado = res.data
             if (dado.email == this.state.email && dado.senha == this.state.senha) {
                 alert("Bem vindo so sistema de pedidos gericht")
-                window.history.go(null,null, "http://localhost:3000/index/#Home")
+                window.open("http://localhost:3000/login/true/index",'_self')
                 
             } else {
                 //se o email ou a senha estiverem erradas ele da um aviso e reload na pagina 
@@ -65,10 +65,7 @@ export default class SingIn extends React.Component{
         })
    
     }
-    openPag(){
-        window.history.go(null,null, "http://localhost:3000/login")
-        
-    }
+    
       
     render() {
         return(
