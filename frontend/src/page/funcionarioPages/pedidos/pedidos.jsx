@@ -59,7 +59,7 @@ const Logo = styled.img`
 
 export const Pedidos = () => {
     
-    const [tela, setTela] = useState(1)
+    const [tela, setTela] = useState(0)
 
     
     const linkPaginas = (e) =>{

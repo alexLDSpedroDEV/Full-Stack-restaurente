@@ -2,7 +2,7 @@ import React, {useEffect,useState}from 'react'
 import styled from 'styled-components'
 import bg from '../../../public/bg.png'
 import { Produtos } from '../produtos/produtos';
-
+import UserCarrinho from '../../../components/user/carrinho/carrinho';
 import { Pedidos } from '../pedidos/pedidos';
 import { Funcionarios } from '../funcionarios/funcionarios';
 import { AiFillHome } from 'react-icons/ai';
@@ -96,9 +96,10 @@ export const UserIndex = () => {
         }
     }
     
-
+    
         return(
             <>
+
                 <Container>
                     <MenuFooter>
                         <IconsNav onClick={() => linkPaginas(1)}><AiFillHome /></IconsNav>
