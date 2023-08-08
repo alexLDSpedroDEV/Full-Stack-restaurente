@@ -22,27 +22,15 @@ const Container = styled.div`
   color: white;
 `;
 
-const MenuLateral = styled.div`
-  width: 400px;
-  min-height: 100vh;
-
-  cursor: pointer;
-  background-color: black;
-  display: grid;
-  grid-template-rows: 100px 100px 100px 100px 100px;
-  align-items: center;
-  justify-content: center;
-  color: white;
-`;
 
 
 
 const Box = styled.div`
-  width: 90vw;
-  overflow-x: scroll;
+  width: 95vw;
   height: auto;
-  display: block;
-  flex-direction: column;
+  display: grid;
+
+  justify-content: start;
   align-items: start;
   color: white;
   margin-bottom: 50px;
@@ -62,16 +50,7 @@ const Logo = styled.img`
     margin-top: 20px;
 `;
 
-const Add = styled.div`
-    :hover{
-        transform: scale(1.2);
-        cursor: pointer;
-    }
-    font-size: 1.8em;
-    color: #d2c69e;
-    padding: 0px 25px;
-     
-`
+
 
 
 const IconsHome = styled.div`

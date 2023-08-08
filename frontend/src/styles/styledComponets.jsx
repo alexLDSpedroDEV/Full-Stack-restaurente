@@ -13,6 +13,7 @@ export const Container = styled.div`
     grid-template-columns: 50% 50%;
     justify-content: center;
     align-items: center;
+    background-color: red;
     @media (max-width: 1200px) {
         display: grid;
         grid-template-columns: auto;

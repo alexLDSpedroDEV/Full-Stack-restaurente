@@ -6,65 +6,14 @@ import UserCarrinho from '../../../components/user/carrinho/carrinho';
 import { Pedidos } from '../pedidos/pedidos';
 import { Funcionarios } from '../funcionarios/funcionarios';
 import { AiFillHome } from 'react-icons/ai';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCartFill } from 'react-icons/bs';
 import { BsFillBasket3Fill } from 'react-icons/bs';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { Container } from '../../../styles/styledComponetsUsers';
+import { MenuFooter } from '../../../styles/styledComponetsUsers';
 
 
-const Container = styled.div`
-  width: 100vw;
-  height: auto;
-  min-height: 100vh;
-  background-image: url(${bg});
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  color: white;
-`;
 
-const MenuLateral = styled.div`
-  width: 400px;
-  min-height: 100vh;
-  background-color: black;
-  display: grid;
-  grid-template-rows: 100px 100px 100px 100px 100px;
-  align-items: center;
-  padding: 0px 45px;
-  justify-items: start;
-  color: white;
-`;
-
-const MenuFooter = styled.div`
-  width: 100vw;
-  height: 90px;
-  background-color: black;
-  position: fixed;
-  bottom: 0%;
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  justify-items: center;
-  align-content: center;
-  font-size: 2em;
-  
-
-`
-const Box = styled.div`
-  width: calc(100vw - 400px);
-  height: auto;
-  min-height: 100vh;
-  display: block;
-  flex-direction: column;
-  align-items: start;
-  color: white;
-  margin-bottom: 50px;
-`;
-const Nav = styled.div`
-  display: flex;
-  height: 100px;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-`;
 
 const IconsNav = styled.div`
   color: #c7b26e;
@@ -79,7 +28,7 @@ const IconsNav = styled.div`
 
 export const UserIndex = () => {
     
-    const [tela, setTela] = useState()
+    const [tela, setTela] = useState(1)
 
     
     const linkPaginas = (e) =>{
@@ -99,13 +48,18 @@ export const UserIndex = () => {
     
         return(
             <>
-
                 <Container>
                     <MenuFooter>
+                        {/* procurar pedidos */}
+                        <IconsNav onClick={() => linkPaginas(3)}><AiOutlineSearch /></IconsNav>
+                        
+                        {/* menu principal */}
+                        
                         <IconsNav onClick={() => linkPaginas(1)}><AiFillHome /></IconsNav>
+                        {/* carrinho */}
+                        
                         <IconsNav onClick={() => linkPaginas(2)}><BsFillCartFill /></IconsNav>
-                        <IconsNav onClick={() => linkPaginas(3)}><BsFillBasket3Fill /></IconsNav>
-                        <IconsNav onClick={() => linkPaginas(4)}><BsFillPersonFill/></IconsNav>
+                        
                     </MenuFooter>
                     
                     {returnPages()}
