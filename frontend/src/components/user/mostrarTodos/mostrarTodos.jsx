@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom';
 
 //importando os estilos
 import { Container } from '../../../styles/styledComponetsUsers';
@@ -9,8 +9,6 @@ import { Img } from '../../../styles/styledComponetsUsers';
 import { Title } from '../../../styles/styledComponetsUsers';
 import { SubTitle } from '../../../styles/styledComponetsUsers';
 import { Buy } from '../../../styles/styledComponetsUsers';
-
-
 
 
 
@@ -37,6 +35,9 @@ export default class UserMostrarTodos extends React.Component{
         })
     }
 
+
+    
+
    
 
     render() {
@@ -55,12 +56,14 @@ export default class UserMostrarTodos extends React.Component{
                             <SubTitle>{produto.tempoProduto} min</SubTitle>
                             <SubTitle>R$: {produto.valorProduto}</SubTitle>
                             <Img src={produto.urlProduto} alt={produto.nomeProduto} />  
-                            <Buy dadosPedidos={produto._id}>Pedir</Buy>   
+                            <Buy dadosPedidos={produto._id} >Pedir</Buy>   
                                                                               
                         </Box>
                         
                     )
+                    
                 }
+                
                 
             </Container>
         )
