@@ -101,7 +101,6 @@ export default class SingInAdmin extends React.Component{
                                 onChange={ e => this.setState({name: e.target.value})}
                                 />
                             </DivForm>
-
                             <DivForm>
                                 <Label>Senha</Label>
                                 <Input
